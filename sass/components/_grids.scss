@@ -1,0 +1,54 @@
+@import "susy";
+
+// Default Options
+// $susy: (
+//   flow: ltr,
+//   math: fluid,
+//   output: float,
+//   gutter-position: after,
+//   container: auto,
+//   container-position: center,
+//   columns: 4,
+//   gutters: .25,
+//   column-width: false,
+//   global-box-sizing: content-box,
+//   last-flow: to,
+//   debug: (
+//     image: hide,
+//     color: rgba(#66f, .25),
+//     output: background,
+//     toggle: top right,
+//   ),
+//   use-custom: (
+//     background-image: true,
+//     background-options: false,
+//     box-sizing: true,
+//     clearfix: false,
+//     rem: true,
+//   )
+// );
+
+// Custom Options
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  container: $max-width,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  // debug: (
+  //   image: show,
+  //   // output: overlay,
+  //   // toggle: top right,
+  //   ),
+);
+// Shorthand
+// $shorthand: 12 1/4 $max-width fluid float after;
+
+// Maps can be used as part of the shorthand
+// $susy: (
+//   columns: 12,
+//   gutters: .25,
+//   math: fluid,
+// );
+// @include layout($susy float inside);

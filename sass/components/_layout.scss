@@ -1,0 +1,184 @@
+// Layout
+.wrap {
+  @include container;
+  padding: 0 gutter(12);
+  clear: both;
+}
+
+.split {
+  margin-top: gutter(12);
+}
+
+.row {
+  @include gallery(6);
+  margin-bottom: gutter(12);
+
+  @media (min-width: 500px) {
+    @include gallery(3 of 12);
+    #layout-first .main & {
+      @include gallery(4 of 8);
+      margin-bottom: gutter(8);
+    }
+    #layout-first .sidebar & {
+      @include span(12);
+      margin-bottom: gutter(4);
+      clear: both;
+    }
+    #layout-second .main &,
+    #layout-second .sidebar & {
+      @include gallery(2 of 6);
+      margin-bottom: gutter(6);
+    }
+    #layout-third .main & {
+      @include gallery(1.5 of 6);
+      margin-bottom: gutter(6);
+    }
+    #layout-third .sidebar & {
+      @include span(12);
+      margin-bottom: gutter(3);
+      clear: both;
+    }
+  }
+
+  @media (min-width: 700px) {
+    #layout-first .main & {
+      @include gallery(2 of 8);
+      margin-bottom: gutter(8);
+    }
+    #layout-first .sidebar & {
+      @include gallery(2 of 4);
+      margin-bottom: gutter(4);
+    }
+    #layout-third .sidebar & {
+      @include gallery(1.5 of 3);
+      margin-bottom: gutter(3);
+    }
+  }
+
+}
+
+.main {
+  padding: gutter(12) gutter(12) 0;
+}
+
+.sidebar,
+.sidebar-left {
+  padding: gutter(12) gutter(12) 0;
+}
+
+// First Layout
+#layout-first {
+
+  .main {
+    @media (min-width: 500px) {
+      @include span(8 of 12);
+    }
+
+    .inner-main {
+      padding: gutter(12);
+      @include span(6 of 12);
+      @media (min-width: 700px) {
+        padding: gutter(8);
+        @include span(4 of 8);
+      }
+      @media (min-width: 700px) {
+        @include span(5 of 8);
+      }
+    }
+    .inner-side {
+      padding: gutter(12);
+      @include span(last 6 of 12);
+      @media (min-width: 700px) {
+        padding: gutter(8);
+        @include span(last 4 of 8);
+      }
+      @media (min-width: 700px) {
+        @include span(last 3 of 8);
+      }
+    }
+
+  }
+
+  .sidebar {
+    @media (min-width: 500px) {
+      @include span(last 4);
+    }
+  }
+
+}
+
+// Second Layout
+#layout-second {
+
+  .main {
+    @media (min-width: 500px) {
+      @include span(6 of 12);
+    }
+    .inner-main {
+      padding: gutter();
+      @include span(3 of 6);
+    }
+    .inner-side {
+      padding: gutter();
+      @include span(last 3 of 6);
+    }
+  }
+
+  .sidebar {
+    @media (min-width: 500px) {
+      @include span(last 6);
+    }
+  }
+
+}
+
+// Third Layout
+#layout-third {
+
+  .sidebar-left {
+    @media (min-width: 500px) {
+      @include span(3 of 12);
+    }
+  }
+
+  .main {
+    @media (min-width: 500px) {
+      @include span(6 of 12);
+    }
+    .inner-main {
+      padding: gutter();
+      @include span(3 of 6);
+    }
+    .inner-side {
+      padding: gutter();
+      @include span(last 3 of 6);
+    }
+  }
+
+  .sidebar {
+    @media (min-width: 500px) {
+      @include span(last 3);
+    }
+  }
+
+}
+
+// Fourth Layout
+#layout-fourth {
+
+  * {
+    @media (min-width: 500px) {
+      @include span(10);
+      @include pre(1 of 12);
+    }
+  }
+
+  h2 {
+    @include span(12)
+  }
+
+  .placeholder {
+    @include span(12);
+  }
+
+}
